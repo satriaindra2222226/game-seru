@@ -141,10 +141,10 @@ function shareCurrentLocation() {
 
   navigator.geolocation.getCurrentPosition(
     (position) => {
-      const lat = position.coords.latitude.toFixed(4);
-      const lng = position.coords.longitude.toFixed(4);
-      
-      locationInput.value = `📍 Lokasi Saat Ini (Koordinat: ${lat}, ${lng})`;
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+
+      locationInput.value = `https://maps.google.com/?q=${lat},${lng}`;
       locationInput.placeholder = 'Nama tempat, patokan, atau alamat lengkap...';
     },
     (error) => {
