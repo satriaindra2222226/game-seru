@@ -203,20 +203,20 @@ input[type="date"] {
 }
 
 /* ---- Screen 4: food ---- */
-.food-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-.food-item {
-  background: #fafafa;
+.food-input {
+  width: 100%;
+  padding: 14px;
   border: 1.5px solid #eee;
-  border-radius: 16px;
-  padding: 16px 8px;
+  border-radius: 14px;
+  font-size: 15px;
+  background: #fafafa;
+  color: #333;
 }
-.food-item .emoji { font-size: 34px; display: block; margin-bottom: 6px; }
-.food-item .label { font-size: 13px; font-weight: 600; color: #333; }
+.food-input:focus {
+  outline: none;
+  border-color: #ff4b6e;
+  background: #fff;
+}
 .food-note { font-size: 12px; color: #999; margin: -14px 0 20px; }
 
 /* ---- Screen 5: summary ---- */
