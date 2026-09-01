@@ -71,26 +71,23 @@
   </div>
 
   <!-- SCREEN 4B: LOKASI JEMPUT -->
-  <div class="screen" id="screen4b" style="display: none;">
-    <div class="card">
-      <div class="mascot">📍🚗</div>
-      <div class="badge">WHERE SHOULD I PICK YOU UP?</div>
-      <h1>Mau dijemput di mana?</h1>
-      
-      <div class="location-card">
-        <div class="location-header">🙌 SHARE YOUR LOCATION</div>
-        <div class="field">
-          <textarea id="locationInput" class="food-input" rows="3" placeholder="Nama tempat, patokan, atau alamat lengkap..."></textarea>
-        </div>
-        <button type="button" class="btn-location-action" onclick="shareCurrentLocation()">
-          📍 SHARE CURRENT LOCATION
-        </button>
-        <p class="location-tip">Can't find your location? Type it in the box above.</p>
-      </div>
-
-      <button class="btn btn-primary" onclick="goToFinalSummary()">See Summary →</button>
+<div class="screen" id="screen4b" style="display: none;">
+  <div class="card">
+    <div class="mascot">📍🚗</div>
+    <div class="badge">WHERE SHOULD I PICK YOU UP?</div>
+    <h1>Mau dijemput di mana?</h1>
+    
+    <div class="field">
+      <input type="text" id="locationInput" class="food-input" placeholder="Nama tempat, patokan, atau alamat..." />
     </div>
+
+    <button type="button" class="btn btn-secondary" onclick="shareCurrentLocation()" style="margin-bottom: 10px;">
+      📍 Share Current Location
+    </button>
+
+    <button class="btn btn-primary" onclick="goToFinalSummary()">See Summary →</button>
   </div>
+</div>
 
   <!-- SCREEN 5: SUMMARY -->
   <div class="screen" id="screen5" style="display: none;">
