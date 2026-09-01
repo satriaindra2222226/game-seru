@@ -102,31 +102,13 @@ function goToFood() {
 }
 
 // ---------- Screen 4: food ----------
-const foodItems = document.querySelectorAll('.food-item');
-let selectedFoods = [];
-
-foodItems.forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('selected');
-    const food = item.dataset.food;
-    if (selectedFoods.includes(food)) {
-      selectedFoods = selectedFoods.filter(f => f !== food);
-    } else {
-      selectedFoods.push(food);
-    }
-  });
-});
-
 function goToSummary() {
-  if (selectedFoods.length === 0) {
-    selectedFoods = ['Whatever you pick 🍽️'];
-  }
   const dateVal = new Date(dateInput.value + 'T00:00:00');
   const dateStr = dateVal.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-
+ 
   document.getElementById('sumWhen').textContent = dateStr + ' at ' + getSelectedTime();
-  document.getElementById('sumFood').textContent = selectedFoods.join(', ');
-
+  document.getElementById('sumFood').textContent = 'Surprise me! 🍽️';
+ 
   goTo('screen5');
   launchConfetti();
 }
