@@ -56,63 +56,66 @@
     <button class="btn btn-primary" onclick="goToFood()">next →</button>
   </div>
 
-  <!-- SCREEN 4: FOOD -->
+ <!-- SCREEN 4: FOOD -->
   <div class="screen" id="screen4">
-    <div class="mascot">😇🍴</div>
-    <div class="badge">I'M ALWAYS HUNGRY TBH 🍔</div>
-    <h1>What are we feeling?</h1>
-    <p class="food-note">(pick as many as you want, no judgement)</p>
-    <div class="field">
-      <input type="text" id="foodInput" class="food-input" placeholder="Pizza? Sushi? Nasi goreng? terserah kamu...">
+    <div class="card">
+      <div class="mascot">😇🍴</div>
+      <div class="badge">I'M ALWAYS HUNGRY TBH 🍔</div>
+      <h1>What are we feeling?</h1>
+      <p class="food-note">(pick as many as you want, no judgement)</p>
+      <div class="field">
+        <input type="text" id="foodInput" class="food-input" placeholder="Pizza? Sushi? Nasi goreng? terserah kamu...">
+      </div>
+      <button class="btn btn-primary" onclick="goToSummary()">this one! →</button>
     </div>
-    <button class="btn btn-primary" onclick="goToSummary()">this one! →</button>
-    <!-- Di dalam #screen4 -->
-    <button class="btn btn-primary" onclick="goTo('screen4b')">Next: Location →</button>
   </div>
 
   <!-- SCREEN 4B: LOKASI JEMPUT -->
-<div class="screen" id="screen4b" style="display: none;">
-  <div class="mascot">📍🚗</div>
-  <div class="badge">WHERE SHOULD I PICK YOU UP?</div>
-  <h1>Mau dijemput di mana?</h1>
-  
-  <div class="location-card">
-    <div class="location-header">🙌 SHARE YOUR LOCATION</div>
-    <div class="field">
-      <textarea id="locationInput" class="food-input" rows="3" placeholder="Nama tempat, patokan, atau alamat lengkap..."></textarea>
+  <div class="screen" id="screen4b" style="display: none;">
+    <div class="card">
+      <div class="mascot">📍🚗</div>
+      <div class="badge">WHERE SHOULD I PICK YOU UP?</div>
+      <h1>Mau dijemput di mana?</h1>
+      
+      <div class="location-card">
+        <div class="location-header">🙌 SHARE YOUR LOCATION</div>
+        <div class="field">
+          <textarea id="locationInput" class="food-input" rows="3" placeholder="Nama tempat, patokan, atau alamat lengkap..."></textarea>
+        </div>
+        <button type="button" class="btn-location-action" onclick="shareCurrentLocation()">
+          📍 SHARE CURRENT LOCATION
+        </button>
+        <p class="location-tip">Can't find your location? Type it in the box above.</p>
+      </div>
+
+      <button class="btn btn-primary" onclick="goToFinalSummary()">See Summary →</button>
     </div>
-    <button type="button" class="btn-location-action" onclick="shareCurrentLocation()">
-      📍 SHARE CURRENT LOCATION
-    </button>
-    <p class="location-tip">Can't find your location? Type it in the box above.</p>
   </div>
 
-  <button class="btn btn-primary" onclick="goToSummary()">See Summary →</button>
-</div>
-
   <!-- SCREEN 5: SUMMARY -->
-  <div class="screen" id="screen5">
-    <div class="mascot">😇✅</div>
-    <h1>it's a date!</h1>
-    <p class="sub">p.s. normal people text. i made a website for you. no big deal.</p>
-    <div class="summary-box">
-      <div class="summary-row">
-        <div class="label">When</div>
-        <div class="value" id="sumWhen">-</div>
-      </div>
-      <div class="summary-row">
-        <div class="label">Food</div>
-        <div class="value" id="sumFood">-</div>
-      </div>
+  <div class="screen" id="screen5" style="display: none;">
+    <div class="card">
+      <div class="mascot">😇✅</div>
+      <h1>it's a date!</h1>
+      <p class="sub">p.s. normal people text. i made a website for you. no big deal.</p>
+      <div class="summary-box">
+        <div class="summary-row">
+          <div class="label">When</div>
+          <div class="value" id="sumWhen">-</div>
+        </div>
+        <div class="summary-row">
+          <div class="label">Food</div>
+          <div class="value" id="sumFood">-</div>
+        </div>
 
-      <!-- DISINI TAMBAHANNYA -->
-      <div class="summary-row">
-        <div class="label">Location</div>
-        <div class="value" id="sumLocation">-</div>
+        <div class="summary-row">
+          <div class="label">Location</div>
+          <div class="value" id="sumLocation">-</div>
+        </div>
       </div>
+      <button class="btn btn-primary" onclick="copyAndText()">💬 Send plan via WhatsApp</button>
+      <div class="made-with">made with love, not with Replit 😇</div>
     </div>
-    <button class="btn btn-primary" onclick="copyAndText()">💬 Send plan via WhatsApp</button>
-    <div class="made-with">made with love, not with Replit 😇</div>
   </div>
 
 </div>

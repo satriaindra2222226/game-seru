@@ -163,7 +163,10 @@ const WHATSAPP_NUMBER = '6285158826039'; // format internasional, tanpa + atau s
 function copyAndText() {
   const when = document.getElementById('sumWhen').textContent;
   const food = document.getElementById('sumFood').textContent;
-  const message = `it's a date! 💌\n\nWhen: ${when}\nFood: ${food}\n\nsee you there 🥰`;
+  const locationElem = document.getElementById('sumLocation');
+  const location = locationElem ? locationElem.textContent : 'TBD';
+
+  const message = `it's a date! 💌\n\nWhen: ${when}\nFood: ${food}\nPick-up: ${location}\n\nsee you there 🥰`;
 
   if (navigator.clipboard) {
     navigator.clipboard.writeText(message).catch(() => {});
