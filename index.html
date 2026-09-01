@@ -68,6 +68,26 @@
     <button class="btn btn-primary" onclick="goToSummary()">this one! →</button>
   </div>
 
+  <!-- SCREEN 4B: LOKASI JEMPUT -->
+<div class="screen" id="screen4b" style="display: none;">
+  <div class="mascot">📍🚗</div>
+  <div class="badge">WHERE SHOULD I PICK YOU UP?</div>
+  <h1>Mau dijemput di mana?</h1>
+  
+  <div class="location-card">
+    <div class="location-header">🙌 SHARE YOUR LOCATION</div>
+    <div class="field">
+      <textarea id="locationInput" class="food-input" rows="3" placeholder="Nama tempat, patokan, atau alamat lengkap..."></textarea>
+    </div>
+    <button type="button" class="btn-location-action" onclick="shareCurrentLocation()">
+      📍 SHARE CURRENT LOCATION
+    </button>
+    <p class="location-tip">Can't find your location? Type it in the box above.</p>
+  </div>
+
+  <button class="btn btn-primary" onclick="goToSummary()">See Summary →</button>
+</div>
+
   <!-- SCREEN 5: SUMMARY -->
   <div class="screen" id="screen5">
     <div class="mascot">😇✅</div>
@@ -81,6 +101,12 @@
       <div class="summary-row">
         <div class="label">Food</div>
         <div class="value" id="sumFood">-</div>
+      </div>
+
+      <!-- DISINI TAMBAHANNYA -->
+      <div class="summary-row">
+        <div class="label">Location</div>
+        <div class="value" id="sumLocation">-</div>
       </div>
     </div>
     <button class="btn btn-primary" onclick="copyAndText()">💬 Send plan via WhatsApp</button>
