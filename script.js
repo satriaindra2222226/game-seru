@@ -115,8 +115,46 @@ function goToSummary() {
   document.getElementById('sumWhen').textContent = dateStr + ' at ' + getSelectedTime();
   document.getElementById('sumFood').textContent = finalFood;
  
-  goTo('screen5');
+  goTo('screen4b');
   launchConfetti();
+}
+
+// ---------- Screen 4B: share location ----------
+function shareCurrentLocation() {
+  const locationInput = document.getElementById('locationInput');
+  
+  if (!navigator.geolocation) {
+    alert('Browser tidak mendukung akses lokasi.');
+    return;
+  }
+
+  locationInput.placeholder = 'Mendeteksi lokasi... ⏳';
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const lat = position.coords.latitude.toFixed(4);
+      const lng = position.coords.longitude.toFixed(4);
+      
+      locationInput.value = `📍 Lokasi Saat Ini (Koordinat: ${lat}, ${lng})`;
+      locationInput.placeholder = 'Nama tempat, patokan, atau alamat lengkap...';
+    },
+    (error) => {
+      alert('Gagal mengambil lokasi otomatis. Ketik manual saja di kolom ya!');
+      locationInput.placeholder = 'Nama tempat, patokan, atau alamat lengkap...';
+    }
+  );
+}
+
+function goToFinalSummary() {
+  const locInputValue = document.getElementById('locationInput').value.trim();
+  const finalLoc = locInputValue !== '' ? locInputValue : 'TBD 📍';
+
+  const sumLocation = document.getElementById('sumLocation');
+  if (sumLocation) {
+    sumLocation.textContent = finalLoc;
+  }
+
+  goTo('screen5');
 }
 
 // ---------- Screen 5: copy & send via WhatsApp ----------
