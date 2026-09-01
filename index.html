@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Will you go on a date with me?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+  <!-- SCREEN 1: ASK -->
+  <div class="screen active" id="screen1">
+    <div class="mascot">😇💌</div>
+    <div class="badge">NO PRESSURE BUT... SAY YES 🙏</div>
+    <h1>Will you go on a date with me?</h1>
+    <div class="buttons" id="buttonArea">
+      <button id="yesBtn" onclick="goTo('screen2'); launchConfetti();">Yes 💖</button>
+      <button id="noBtn" onmouseover="dodge()" ontouchstart="dodge(event)" onclick="dodge()">No</button>
+    </div>
+    <div class="hint" id="hintText">Coba klik tombol "No" itu... kalau bisa 😏</div>
+  </div>
+
+  <!-- SCREEN 2: CELEBRATE -->
+  <div class="screen" id="screen2">
+    <div class="mascot">🥳😇</div>
+    <div class="heart-chart">MY HEART RN: 📈📈📈</div>
+    <h1>no way. NO WAY. 😳</h1>
+    <p class="sub">aku udah nyiapin pidato panjang seandainya kamu jawab "no"</p>
+    <button class="btn btn-primary" onclick="goTo('screen3')">okay okay! →</button>
+  </div>
+
+  <!-- SCREEN 3: SCHEDULE -->
+  <div class="screen" id="screen3">
+    <div class="mascot">😇📅</div>
+    <div class="badge">LOCK IT IN BESTIE 🔒</div>
+    <h1>So... when are you free?</h1>
+    <div class="field">
+      <label>Pick a Day ✨</label>
+      <input type="date" id="dateInput">
+    </div>
+    <div class="field">
+      <label>What Time? 🥺</label>
+      <div class="time-picker">
+        <select id="hourSelect" class="time-select"></select>
+        <span class="time-colon">:</span>
+        <select id="minuteSelect" class="time-select"></select>
+        <select id="ampmSelect" class="time-select ampm">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+      <div class="time-preview" id="timePreview">🕒 6:00 PM</div>
+    </div>
+    <button class="btn btn-primary" onclick="goToFood()">next →</button>
+  </div>
+
+  <!-- SCREEN 4: FOOD -->
+  <div class="screen" id="screen4">
+    <div class="mascot">😇🍴</div>
+    <div class="badge">I'M ALWAYS HUNGRY TBH 🍔</div>
+    <h1>What are we feeling?</h1>
+    <p class="food-note">(pick as many as you want, no judgement)</p>
+    <div class="food-grid" id="foodGrid">
+      <div class="food-item" data-food="Pizza"><span class="emoji">🍕</span><span class="label">Pizza</span></div>
+      <div class="food-item" data-food="Sushi"><span class="emoji">🍣</span><span class="label">Sushi</span></div>
+      <div class="food-item" data-food="Burgers"><span class="emoji">🍔</span><span class="label">Burgers</span></div>
+      <div class="food-item" data-food="Pasta"><span class="emoji">🍝</span><span class="label">Pasta</span></div>
+      <div class="food-item" data-food="Tacos"><span class="emoji">🌮</span><span class="label">Tacos</span></div>
+      <div class="food-item" data-food="Ramen"><span class="emoji">🍜</span><span class="label">Ramen</span></div>
+    </div>
+    <button class="btn btn-primary" onclick="goToSummary()">this one! →</button>
+  </div>
+
+  <!-- SCREEN 5: SUMMARY -->
+  <div class="screen" id="screen5">
+    <div class="mascot">😇✅</div>
+    <h1>it's a date!</h1>
+    <p class="sub">p.s. normal people text. i made a website for you. no big deal.</p>
+    <div class="summary-box">
+      <div class="summary-row">
+        <div class="label">When</div>
+        <div class="value" id="sumWhen">-</div>
+      </div>
+      <div class="summary-row">
+        <div class="label">Food</div>
+        <div class="value" id="sumFood">-</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="copyAndText()">💬 Send plan via WhatsApp</button>
+    <div class="made-with">made with love, not with Replit 😇</div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
