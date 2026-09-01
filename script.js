@@ -106,8 +106,14 @@ function goToSummary() {
   const dateVal = new Date(dateInput.value + 'T00:00:00');
   const dateStr = dateVal.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
  
+  // Ambil teks dari textarea
+  const foodInputValue = document.getElementById('foodInput').value.trim();
+  
+  // Jika diisi pake isiannya, kalo kosong otomatis jadi fallback
+  const finalFood = foodInputValue !== '' ? foodInputValue : 'Surprise me! 🍽️';
+
   document.getElementById('sumWhen').textContent = dateStr + ' at ' + getSelectedTime();
-  document.getElementById('sumFood').textContent = 'Surprise me! 🍽️';
+  document.getElementById('sumFood').textContent = finalFood;
  
   goTo('screen5');
   launchConfetti();
