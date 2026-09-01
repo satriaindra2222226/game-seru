@@ -40,10 +40,19 @@ function launchConfetti() {
   }
 }
 
-// ---------- Screen switching ----------
+// KODE BARU (Pakai ini):
 function goTo(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
+  
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    target.style.display = 'block';
+  }
+  
   window.scrollTo(0, 0);
 }
 
